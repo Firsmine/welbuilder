@@ -21,5 +21,20 @@ export const useAuthStore = defineStore('auth', {
         return false
       }
     },
+    async login(credentials) {
+      this.errors = null
+      try {
+        const response = await api.post('/login', credentials)
+        this.setAuth(response.data.data)
+        return true
+      } catch (error) {
+        if (error.response && error.response.status === 422) {
+          this.errors = error.response.data.errors
+        } else if (error.response && error.response.status === 401) {
+          this.errors = { message: error.response.data.message }
+        }
+        return false
+      }
+    },
   },
 })
