@@ -28,6 +28,11 @@ const router = createRouter({
       name: 'builder',
       component: () => BuilderView,
     },
+    {
+      path: '/pages/:slug/preview',
+      name: 'preview',
+      component: () => PreviewView,
+    },
   ],
 })
 
