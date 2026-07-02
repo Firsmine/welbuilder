@@ -18,6 +18,16 @@ const router = createRouter({
       name: 'register',
       component: () => RegisterView,
     },
+    {
+      path: '/pages',
+      name: 'pages',
+      component: () => PagesView,
+    },
+    {
+      path: '/pages/:slug/builder',
+      name: 'builder',
+      component: () => BuilderView,
+    },
   ],
 })
 
