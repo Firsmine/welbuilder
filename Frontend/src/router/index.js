@@ -8,11 +8,11 @@ import PreviewView from '@/views/PreviewView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: () =>
-    // },
+    {
+      path: '/login',
+      name: 'register',
+      component: () => LoginView,
+    },
   ],
 })
 
